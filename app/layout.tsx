@@ -51,8 +51,8 @@ export default function RootLayout({
         <PostHogProvider>
           <ColorScheme>
             <Accessibility>
-            {children}
-            <LiveChat />
+              {children}
+              <LiveChat />
             </Accessibility>
           </ColorScheme>
         </PostHogProvider>
