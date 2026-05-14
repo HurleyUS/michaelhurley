@@ -45,7 +45,9 @@ export function NarrowContainer({
   as: Component = "div",
 }: ContainerProps) {
   return (
-    <Component className={cn("w-full p-md mx-auto", "md:max-w-[48rem]", className)}>
+    <Component
+      className={cn("w-full p-md mx-auto", "md:max-w-[48rem]", className)}
+    >
       {children}
     </Component>
   );

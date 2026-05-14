@@ -7,17 +7,18 @@ function isRecord(v: unknown): v is Record<string, unknown> {
   return typeof v === "object" && v !== null;
 }
 
-function parseTextParts(
-  parts: unknown
-): UIMessage["parts"] | null {
+function parseTextParts(parts: unknown): UIMessage["parts"] | null {
   if (!Array.isArray(parts)) return null;
   const out: UIMessage["parts"] = [];
   for (const p of parts) {
     if (!isRecord(p) || p.type !== "text" || typeof p.text !== "string") {
       continue;
     }
-    const textPart: { type: "text"; text: string; state?: "streaming" | "done" } =
-      { type: "text", text: p.text };
+    const textPart: {
+      type: "text";
+      text: string;
+      state?: "streaming" | "done";
+    } = { type: "text", text: p.text };
     if (p.state === "streaming" || p.state === "done") {
       textPart.state = p.state;
     }
@@ -62,7 +63,9 @@ export function parseStoredMessages(raw: string | null): UIMessage[] | null {
 export function loadMichaelHurleyChatFromStorage(): UIMessage[] | null {
   if (typeof window === "undefined") return null;
   try {
-    return parseStoredMessages(localStorage.getItem(MICHAEL_HURLEY_CHAT_STORAGE_KEY));
+    return parseStoredMessages(
+      localStorage.getItem(MICHAEL_HURLEY_CHAT_STORAGE_KEY),
+    );
   } catch {
     return null;
   }
@@ -72,7 +75,10 @@ export function saveMichaelHurleyChatToStorage(messages: UIMessage[]): void {
   if (typeof window === "undefined") return;
   try {
     const payload = stripStreamingForStorage(messages);
-    localStorage.setItem(MICHAEL_HURLEY_CHAT_STORAGE_KEY, JSON.stringify(payload));
+    localStorage.setItem(
+      MICHAEL_HURLEY_CHAT_STORAGE_KEY,
+      JSON.stringify(payload),
+    );
   } catch {
     // QuotaExceededError or private mode — ignore
   }

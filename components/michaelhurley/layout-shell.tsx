@@ -137,7 +137,9 @@ export function SiteNav() {
         <button
           type="button"
           aria-expanded={isMenuOpen}
-          aria-label={isMenuOpen ? "Close site navigation" : "Open site navigation"}
+          aria-label={
+            isMenuOpen ? "Close site navigation" : "Open site navigation"
+          }
           className="menu-trigger relative animate-fadeInUp"
           style={{ "--fade-delay": "500ms" } as React.CSSProperties}
           onClick={() => {
@@ -237,7 +239,11 @@ export function SiteFooter() {
     <footer className="px-xl py-4x text-center text-sm border-t border-border mt-auto">
       <p>Michael Hurley builds for growth, clarity, and momentum.</p>
       <p>
-        <a href="https://github.com/michaelmonetized" target="_blank" rel="noreferrer">
+        <a
+          href="https://github.com/michaelmonetized"
+          target="_blank"
+          rel="noreferrer"
+        >
           GitHub
         </a>{" "}
         •{" "}
@@ -245,7 +251,11 @@ export function SiteFooter() {
           HurleyUS
         </a>{" "}
         •{" "}
-        <a href="https://www.hustlelaunch.com/" target="_blank" rel="noreferrer">
+        <a
+          href="https://www.hustlelaunch.com/"
+          target="_blank"
+          rel="noreferrer"
+        >
           Hustle Launch
         </a>
       </p>

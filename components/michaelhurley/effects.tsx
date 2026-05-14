@@ -96,7 +96,8 @@ export function HeroCanvas() {
 
       point.seeds.forEach((seed) => {
         const offsetX = Math.cos(time * JITTER_SPEED + seed) * JITTER_RANGE;
-        const offsetY = Math.sin(time * JITTER_SPEED * 1.1 + seed) * JITTER_RANGE;
+        const offsetY =
+          Math.sin(time * JITTER_SPEED * 1.1 + seed) * JITTER_RANGE;
 
         context.beginPath();
         context.arc(
@@ -110,7 +111,9 @@ export function HeroCanvas() {
       });
     };
 
-    const points = Array.from({ length: POINT_COUNT }, (_, index) => createPoint(index));
+    const points = Array.from({ length: POINT_COUNT }, (_, index) =>
+      createPoint(index),
+    );
     const blobCanvas = document.createElement("canvas");
     const blobCtx = blobCanvas.getContext("2d");
     const maskCanvas = document.createElement("canvas");
@@ -123,7 +126,10 @@ export function HeroCanvas() {
 
     const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 
-    const drawImageCover = (context: CanvasRenderingContext2D, img: HTMLImageElement) => {
+    const drawImageCover = (
+      context: CanvasRenderingContext2D,
+      img: HTMLImageElement,
+    ) => {
       if (!img.complete || img.naturalWidth === 0) return;
 
       const width = context.canvas.width;
@@ -150,7 +156,10 @@ export function HeroCanvas() {
 
     const handleResize = () => {
       canvas.width = blobCanvas.width = maskCanvas.width = window.innerWidth;
-      canvas.height = blobCanvas.height = maskCanvas.height = window.innerHeight;
+      canvas.height =
+        blobCanvas.height =
+        maskCanvas.height =
+          window.innerHeight;
     };
 
     const handleMouseMove = (event: MouseEvent) => {
@@ -164,7 +173,10 @@ export function HeroCanvas() {
 
       if (!isIdle) return;
 
-      const distance = Math.hypot(wanderTarget.x - mouse.x, wanderTarget.y - mouse.y);
+      const distance = Math.hypot(
+        wanderTarget.x - mouse.x,
+        wanderTarget.y - mouse.y,
+      );
       if (distance < 100) {
         wanderTarget.x = Math.random() * window.innerWidth;
         wanderTarget.y = Math.random() * window.innerHeight;
@@ -343,12 +355,7 @@ export function GooBackgroundCanvas() {
     gl.bufferData(
       gl.ARRAY_BUFFER,
       new Float32Array([
-        -1.0, -1.0,
-        1.0, -1.0,
-        -1.0, 1.0,
-        -1.0, 1.0,
-        1.0, -1.0,
-        1.0, 1.0,
+        -1.0, -1.0, 1.0, -1.0, -1.0, 1.0, -1.0, 1.0, 1.0, -1.0, 1.0, 1.0,
       ]),
       gl.STATIC_DRAW,
     );
@@ -386,5 +393,7 @@ export function GooBackgroundCanvas() {
     };
   }, []);
 
-  return <canvas id="goo-background" ref={canvasRef} width={100} height={100} />;
+  return (
+    <canvas id="goo-background" ref={canvasRef} width={100} height={100} />
+  );
 }

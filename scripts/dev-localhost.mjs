@@ -26,7 +26,9 @@ function ensureCaddyImport(caddyfilePath, snippetsDir) {
   const importLine = `import ${path.join(snippetsDir, "*.caddy")}`;
   const legacyImportLine = "import ~/.local/etc/caddy/dev-sites/*.caddy";
   const marker = "# Project dev sites";
-  const existing = existsSync(caddyfilePath) ? readFileSync(caddyfilePath, "utf8") : "";
+  const existing = existsSync(caddyfilePath)
+    ? readFileSync(caddyfilePath, "utf8")
+    : "";
   const replacedLegacy = existing.replaceAll(legacyImportLine, importLine);
 
   if (replacedLegacy.includes(importLine)) {
@@ -40,7 +42,7 @@ function ensureCaddyImport(caddyfilePath, snippetsDir) {
   writeFileSync(
     caddyfilePath,
     `${replacedLegacy.trimEnd()}${suffix}${marker}\n${importLine}\n`,
-    "utf8"
+    "utf8",
   );
 }
 
@@ -100,7 +102,7 @@ function ensureCaddyLoaded(caddyfilePath) {
   }
 
   console.warn(
-    "[dev-localhost] Caddy is not running. Starting it now. You may be prompted once for your password so Caddy can finish local HTTPS setup."
+    "[dev-localhost] Caddy is not running. Starting it now. You may be prompted once for your password so Caddy can finish local HTTPS setup.",
   );
 
   const start = runCommand("caddy", ["start", "--config", caddyfilePath]);
@@ -117,7 +119,13 @@ const host = `${slug}.localhost`;
 const port = portForSlug(slug);
 
 const caddyfilePath = path.join(os.homedir(), ".local", "etc", "Caddyfile");
-const snippetsDir = path.join(os.homedir(), ".local", "etc", "caddy", "dev-sites");
+const snippetsDir = path.join(
+  os.homedir(),
+  ".local",
+  "etc",
+  "caddy",
+  "dev-sites",
+);
 const snippetPath = path.join(snippetsDir, `${slug}.caddy`);
 
 mkdirSync(path.dirname(caddyfilePath), { recursive: true });
@@ -150,7 +158,7 @@ const child = spawn(
       DEV_URL: url,
       PORT: String(port),
     },
-  }
+  },
 );
 
 child.on("exit", (code, signal) => {

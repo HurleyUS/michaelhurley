@@ -103,10 +103,7 @@ export const timelineEntries: TimelineEntry[] = [
     logoSrc: "https://realay.com/realay-logo.svg",
     logoPlacement: "header",
     logoClassName: "filter grayscale brightness-[50000%] contrast-[100]",
-    meta: [
-      "Chief Technology Officer, 03/2023 - 04/2024",
-      "Salary: $60k++/yr",
-    ],
+    meta: ["Chief Technology Officer, 03/2023 - 04/2024", "Salary: $60k++/yr"],
     bullets: [
       "Responsible for the development and maintenance of the company's technology, including but not limited to: infrastructure, database design, software engineering, user experience, design, video production, investment acquisition, direct to customer marketing, sales and growth strategy.",
       "Support c-suite with technology and infrastructure for analyzing and monitoring operations, usage, and performance.",
@@ -126,10 +123,7 @@ export const timelineEntries: TimelineEntry[] = [
     logoSrc:
       "https://www.whitefoxstudios.net/wp-content/uploads/elementor/thumbs/favicon-r6hb7lahwugs27wikj147kj6c5tllpdfevpdkqjiv0.png",
     logoPlacement: "footer",
-    meta: [
-      "Director, 02/2015 - 02/2024",
-      "Salary: $28k/yr - $60k++/yr",
-    ],
+    meta: ["Director, 02/2015 - 02/2024", "Salary: $28k/yr - $60k++/yr"],
     bullets: [
       "Responsible for all aspects of the company's success, including but not limited to: sales, marketing, finance, human resources, and technology.",
       "Develop software and systems to support the business and business clients.",
@@ -280,10 +274,7 @@ export const timelineEntries: TimelineEntry[] = [
     logoSrc:
       "https://web.archive.org/web/20110208062446im_/http://corporatecleaningservicesinc.com/images/bg_header.jpg",
     logoPlacement: "header",
-    meta: [
-      "Regional Manager, 06/1996 - 06/2003",
-      "Salary: $7.50/h - $35k/yr",
-    ],
+    meta: ["Regional Manager, 06/1996 - 06/2003", "Salary: $7.50/h - $35k/yr"],
     bullets: [
       "Responsible for all customer satisfaction for clients throughout the greater South Carolina lowcountry area, including team management and deployment, crisis response, HR, supply distribution, scheduling, recruitment, training, compensation, transportation, cleaning, and grounds maintenance.",
       "Additionally responsible for logo design, web design, and marketing and advertising for the company.",

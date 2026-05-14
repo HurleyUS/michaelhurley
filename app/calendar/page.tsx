@@ -17,23 +17,29 @@ export default function CalendarPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4x items-center">
           <div className="flex justify-center border-8 border-foreground p-xl rounded-3xl bg-background shadow-[20px_20px_0px_0px_rgba(0,0,0,0.1)]">
-            <CalendarUI
-              mode="single"
-              className="rounded-md border-0"
-            />
+            <CalendarUI mode="single" className="rounded-md border-0" />
           </div>
 
           <div className="space-y-xl">
             <div className="border-l-8 border-primary p-xl">
-              <h2 className="text-3xl font-black uppercase mb-sm">Current Status</h2>
-              <p className="text-xl font-bold text-primary">Accepting Select Projects</p>
-              <p className="mt-md opacity-70">Focusing on high-performance web applications and strategic growth operations.</p>
+              <h2 className="text-3xl font-black uppercase mb-sm">
+                Current Status
+              </h2>
+              <p className="text-xl font-bold text-primary">
+                Accepting Select Projects
+              </p>
+              <p className="mt-md opacity-70">
+                Focusing on high-performance web applications and strategic
+                growth operations.
+              </p>
             </div>
 
             <div className="border-l-8 border-foreground p-xl">
               <h2 className="text-3xl font-black uppercase mb-sm">Timezone</h2>
               <p className="text-xl font-bold">Eastern Standard Time (EST)</p>
-              <p className="mt-md opacity-70">Based in the North Carolina Highlands.</p>
+              <p className="mt-md opacity-70">
+                Based in the North Carolina Highlands.
+              </p>
             </div>
           </div>
         </div>

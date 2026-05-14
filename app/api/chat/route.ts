@@ -1,9 +1,5 @@
 import { createOpenAI } from "@ai-sdk/openai";
-import {
-  convertToModelMessages,
-  streamText,
-  type UIMessage,
-} from "ai";
+import { convertToModelMessages, streamText, type UIMessage } from "ai";
 import { MICHAEL_HURLEY_CHAT_SYSTEM_PROMPT } from "@/lib/michael-hurley-chat-system-prompt";
 import { resolveOpenRouterModelId } from "@/lib/openrouter-resolve-model";
 
@@ -24,7 +20,7 @@ export async function POST(req: Request) {
   if (!apiKey) {
     return Response.json(
       { error: "Server misconfiguration: OPENROUTER_API_KEY is not set." },
-      { status: 503 }
+      { status: 503 },
     );
   }
 
@@ -37,7 +33,10 @@ export async function POST(req: Request) {
 
   const messages = (body as { messages?: UIMessage[] }).messages;
   if (!Array.isArray(messages)) {
-    return Response.json({ error: "Expected messages array." }, { status: 400 });
+    return Response.json(
+      { error: "Expected messages array." },
+      { status: 400 },
+    );
   }
 
   const openrouter = createOpenAI({
@@ -53,7 +52,8 @@ export async function POST(req: Request) {
   try {
     modelId = await resolveOpenRouterModelId(openrouter);
   } catch (err) {
-    const message = err instanceof Error ? err.message : "Model resolution failed.";
+    const message =
+      err instanceof Error ? err.message : "Model resolution failed.";
     console.error("[openrouter]", message);
     return Response.json({ error: message }, { status: 503 });
   }

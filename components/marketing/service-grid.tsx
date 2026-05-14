@@ -1,6 +1,6 @@
-import * as React from "react"
-import Link from "next/link"
-import { cn } from "@/lib/utils"
+import * as React from "react";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 const services = [
   {
@@ -31,17 +31,20 @@ const services = [
       "Weekly 1-on-1 sessions with our team. Get advice on pricing, positioning, and product-market fit.",
     href: "/services/office-hours",
   },
-]
+];
 
 export default function ServiceGrid({ className }: { className?: string }) {
   return (
-    <section className={cn("mx-auto w-full max-w-5xl px-6 py-20 md:py-28", className)}>
+    <section
+      className={cn("mx-auto w-full max-w-5xl px-6 py-20 md:py-28", className)}
+    >
       <div className="mb-12 flex flex-col items-center gap-3 text-center">
         <h2 className="font-heading text-2xl font-black tracking-tight text-foreground md:text-3xl">
           Services that move the needle
         </h2>
         <p className="max-w-[28rem] text-sm text-muted-foreground">
-          Beyond the platform. Hands-on services to help you launch with confidence.
+          Beyond the platform. Hands-on services to help you launch with
+          confidence.
         </p>
       </div>
 
@@ -73,5 +76,5 @@ export default function ServiceGrid({ className }: { className?: string }) {
         ))}
       </div>
     </section>
-  )
+  );
 }

@@ -1,10 +1,13 @@
 <!-- BEGIN:nextjs-agent-rules -->
+
 # This is NOT the Next.js you know
 
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
+
 <!-- END:nextjs-agent-rules -->
 
 <!-- BEGIN:developing-locally-agent-rules -->
+
 ## REQUIREMENTS
 
 - Bun runtime is to be used exclusively.
@@ -14,4 +17,5 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - bun tsc && bun lint --fix --max-warnings 9999 must be run before committing changes.
 
 @README.md
+
 <!-- END:developing-locally-agent-rules -->

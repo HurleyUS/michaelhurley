@@ -12,8 +12,9 @@ let cachedModelId: string | null = null;
  */
 export function buildOpenRouterModelCandidates(): string[] {
   const fromEnv =
-    process.env.OPENROUTER_MODEL?.split(/[,\n]+/).map((s) => s.trim()).filter(Boolean) ??
-    [];
+    process.env.OPENROUTER_MODEL?.split(/[,\n]+/)
+      .map((s) => s.trim())
+      .filter(Boolean) ?? [];
   const fallbacks = [
     "openrouter/free",
     "xiaomi/mimo-v2-flash:free",
@@ -28,7 +29,7 @@ export function buildOpenRouterModelCandidates(): string[] {
  * Logs failures with `[openrouter]` and the chosen id on success.
  */
 export async function resolveOpenRouterModelId(
-  openrouter: OpenRouterProvider
+  openrouter: OpenRouterProvider,
 ): Promise<string> {
   if (cachedModelId) {
     return cachedModelId;
@@ -54,6 +55,6 @@ export async function resolveOpenRouterModelId(
   }
 
   throw new Error(
-    "No working OpenRouter model. Set OPENROUTER_MODEL to a valid id (see https://openrouter.ai/models). Hint: list free models with: curl -s https://openrouter.ai/api/v1/models | rg ':free'"
+    "No working OpenRouter model. Set OPENROUTER_MODEL to a valid id (see https://openrouter.ai/models). Hint: list free models with: curl -s https://openrouter.ai/api/v1/models | rg ':free'",
   );
 }

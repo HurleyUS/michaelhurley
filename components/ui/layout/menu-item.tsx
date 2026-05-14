@@ -26,9 +26,7 @@ export default function MenuItem({
           asChild
           className={navigationMenuTriggerStyle() + " " + className}
         >
-          <Link href={href}>
-            {anchor}
-          </Link>
+          <Link href={href}>{anchor}</Link>
         </NavigationMenuLink>
       ) : (
         children && (

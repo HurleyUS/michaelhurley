@@ -1,6 +1,9 @@
 import { PageShell } from "@/components/michaelhurley/layout-shell";
 import { WaveText, MarkIcon } from "@/components/michaelhurley/shared";
-import { skillGroups, developmentGroups } from "@/components/michaelhurley/data";
+import {
+  skillGroups,
+  developmentGroups,
+} from "@/components/michaelhurley/data";
 
 export default function OnTheClockPage() {
   return (
@@ -13,7 +16,9 @@ export default function OnTheClockPage() {
               <br />
               <WaveText text="The" />
               <br />
-              <span className="text-primary"><WaveText text="Clock" /></span>
+              <span className="text-primary">
+                <WaveText text="Clock" />
+              </span>
             </h1>
             <p className="text-2xl mt-xl uppercase tracking-widest italic opacity-70">
               Professional Career & Performance
@@ -22,12 +27,17 @@ export default function OnTheClockPage() {
               <MarkIcon className="h-4x w-auto opacity-20" />
             </div>
           </div>
-          
+
           <div className="w-full md:w-2/3 space-y-4x">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2xl">
               {skillGroups.map((group) => (
-                <div key={group.title} className="border-t-4 border-foreground pt-xl">
-                  <h2 className="text-4xl font-black uppercase mb-lg">{group.title}</h2>
+                <div
+                  key={group.title}
+                  className="border-t-4 border-foreground pt-xl"
+                >
+                  <h2 className="text-4xl font-black uppercase mb-lg">
+                    {group.title}
+                  </h2>
                   <ul className="space-y-sm text-xl opacity-80">
                     {group.items.map((item) => (
                       <li key={item}>• {item}</li>
@@ -38,11 +48,15 @@ export default function OnTheClockPage() {
             </div>
 
             <div className="border-t-4 border-primary pt-xl bg-primary/5 p-xl">
-              <h2 className="text-5xl font-black uppercase mb-xl">Senior Engineering</h2>
+              <h2 className="text-5xl font-black uppercase mb-xl">
+                Senior Engineering
+              </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-xl">
                 {developmentGroups.map((group) => (
                   <div key={group.title}>
-                    <h3 className="text-2xl font-bold uppercase mb-sm opacity-60">{group.title}</h3>
+                    <h3 className="text-2xl font-bold uppercase mb-sm opacity-60">
+                      {group.title}
+                    </h3>
                     <ul className="space-y-xs text-lg italic">
                       {group.items.map((item) => (
                         <li key={item}>{item}</li>
