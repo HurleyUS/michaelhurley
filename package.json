@@ -8,7 +8,10 @@
     "dev:info": "node scripts/dev-localhost-info.mjs",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "format": "bunx --bun prettier --write . --ignore-path .gitignore",
+    "typecheck": "tsc --noEmit",
+    "check": "bun run typecheck && bun run build"
   },
   "dependencies": {
     "@ai-sdk/openai": "^3.0.50",
