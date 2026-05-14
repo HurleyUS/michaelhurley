@@ -1,3 +1,6 @@
+/**
+ * App Layout public module surface.
+ */
 import type { Metadata } from "next";
 import {
   Source_Sans_3,
@@ -10,6 +13,7 @@ import "../styles/michaelhurley.css";
 import ColorScheme from "@/components/color-scheme";
 import Accessibility from "@/components/accessibility";
 import LiveChat from "@/components/marketing/live-chat";
+import { PostHogProvider } from "@/providers/posthog-provider";
 
 const sourceSans = Source_Sans_3({
   variable: "--font-sans",
@@ -44,12 +48,14 @@ export default function RootLayout({
       className={`${sourceSans.variable} ${sourceSerif.variable} ${sourceMono.variable}`}
     >
       <body className="min-h-dvh flex flex-col">
-        <ColorScheme>
-          <Accessibility>
+        <PostHogProvider>
+          <ColorScheme>
+            <Accessibility>
             {children}
             <LiveChat />
-          </Accessibility>
-        </ColorScheme>
+            </Accessibility>
+          </ColorScheme>
+        </PostHogProvider>
       </body>
     </html>
   );

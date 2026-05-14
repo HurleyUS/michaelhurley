@@ -1,3 +1,6 @@
+/**
+ * App On The Clock Page public module surface.
+ */
 import { PageShell } from "@/components/michaelhurley/layout-shell";
 import { WaveText, MarkIcon } from "@/components/michaelhurley/shared";
 import {

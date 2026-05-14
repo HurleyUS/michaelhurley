@@ -1,3 +1,6 @@
+/**
+ * App Api Prefetch Images [...rest] Route public module surface.
+ */
 import { NextRequest, NextResponse } from "next/server";
 import { parseHTML } from "linkedom";
 

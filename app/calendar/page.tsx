@@ -1,3 +1,6 @@
+/**
+ * App Calendar Page public module surface.
+ */
 import { PageShell } from "@/components/michaelhurley/layout-shell";
 import { WaveText } from "@/components/michaelhurley/shared";
 import { Calendar as CalendarUI } from "@/components/ui/calendar";

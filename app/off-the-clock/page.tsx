@@ -1,3 +1,6 @@
+/**
+ * App Off The Clock Page public module surface.
+ */
 import Image from "next/image";
 import { PageShell } from "@/components/michaelhurley/layout-shell";
 import { WaveText, MarkIcon } from "@/components/michaelhurley/shared";

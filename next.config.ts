@@ -1,3 +1,7 @@
+/**
+ * Next.config public module surface.
+ */
+import { withSentryConfig } from "@sentry/nextjs";
 import type { NextConfig } from "next";
 import path from "node:path";
 
@@ -23,4 +27,8 @@ const nextConfig: NextConfig = {
   allowedDevOrigins: [projectHost, "*.localhost"],
 };
 
-export default nextConfig;
+export default withSentryConfig(nextConfig, {
+  org: process.env.SENTRY_ORG,
+  project: process.env.SENTRY_PROJECT || "michaelhurley",
+  silent: true,
+});

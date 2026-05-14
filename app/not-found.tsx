@@ -1,3 +1,6 @@
+/**
+ * App Not Found public module surface.
+ */
 import { Button } from "@/components/ui/button";
 import { headers } from "next/headers";
 import Link from "@/components/link";

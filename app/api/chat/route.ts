@@ -1,3 +1,6 @@
+/**
+ * App Api Chat Route public module surface.
+ */
 import { createOpenAI } from "@ai-sdk/openai";
 import { convertToModelMessages, streamText, type UIMessage } from "ai";
 import { MICHAEL_HURLEY_CHAT_SYSTEM_PROMPT } from "@/lib/michael-hurley-chat-system-prompt";
