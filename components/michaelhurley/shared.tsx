@@ -19,10 +19,7 @@ export function WaveText({
   className?: string;
 }) {
   return (
-    <span
-      className={cn(incoming ? "wave-text-in" : "wave-text", className)}
-      aria-label={text}
-    >
+    <span className={cn(incoming ? "wave-text-in" : "wave-text", className)} aria-label={text}>
       {text.split("").map((character, index) =>
         character === " " ? (
           " "
@@ -44,13 +41,7 @@ export function WaveText({
   );
 }
 
-export function MarkIcon({
-  className,
-  stroke = false,
-}: {
-  className?: string;
-  stroke?: boolean;
-}) {
+export function MarkIcon({ className, stroke = false }: { className?: string; stroke?: boolean }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

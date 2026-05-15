@@ -40,9 +40,7 @@ const INITIAL_MESSAGES: UIMessage[] = [
 
 function getMessageText(message: UIMessage): string {
   return message.parts
-    .filter(
-      (part): part is { type: "text"; text: string } => part.type === "text",
-    )
+    .filter((part): part is { type: "text"; text: string } => part.type === "text")
     .map((part) => part.text)
     .join("");
 }
@@ -72,30 +70,17 @@ function MessageBubble({
   const isAssistant = message.role === "assistant";
   const content = getMessageText(message);
   const isStreaming =
-    isAssistant &&
-    message.parts.some((p) => p.type === "text" && p.state === "streaming");
+    isAssistant && message.parts.some((p) => p.type === "text" && p.state === "streaming");
   const canRetry = !busy && !isStreaming && content.length > 0;
 
   return (
-    <div
-      className={cn(
-        "flex flex-col gap-1",
-        isAssistant ? "items-start" : "items-end",
-      )}
-    >
-      <div
-        className={cn(
-          "flex items-start gap-2",
-          isAssistant ? "flex-row" : "flex-row-reverse",
-        )}
-      >
+    <div className={cn("flex flex-col gap-1", isAssistant ? "items-start" : "items-end")}>
+      <div className={cn("flex items-start gap-2", isAssistant ? "flex-row" : "flex-row-reverse")}>
         <Avatar size="sm">
           <AvatarFallback
             className={cn(
               "text-[10px] font-bold",
-              isAssistant
-                ? "bg-primary text-primary-foreground"
-                : "bg-muted text-muted-foreground",
+              isAssistant ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground",
             )}
             aria-hidden
           >
@@ -106,9 +91,7 @@ function MessageBubble({
         <div
           className={cn(
             "max-w-[min(100%,18rem)] rounded-none px-3 py-2 text-xs leading-relaxed",
-            isAssistant
-              ? "bg-muted text-foreground"
-              : "bg-primary text-primary-foreground",
+            isAssistant ? "bg-muted text-foreground" : "bg-primary text-primary-foreground",
           )}
         >
           <p className="whitespace-pre-wrap wrap-break-word">{content}</p>
@@ -129,20 +112,13 @@ function MessageBubble({
         </div>
       </div>
 
-      <div
-        className={cn(
-          "flex gap-1",
-          isAssistant ? "ml-8" : "mr-8 flex-row-reverse",
-        )}
-      >
+      <div className={cn("flex gap-1", isAssistant ? "ml-8" : "mr-8 flex-row-reverse")}>
         <Button
           type="button"
           variant="ghost"
           size="icon-sm"
           className="text-muted-foreground hover:text-foreground"
-          aria-label={
-            isAssistant ? "Copy assistant message" : "Copy your message"
-          }
+          aria-label={isAssistant ? "Copy assistant message" : "Copy your message"}
           disabled={!content.trim()}
           onClick={() => void copyMessageText(content)}
         >
@@ -153,9 +129,7 @@ function MessageBubble({
           variant="ghost"
           size="icon-sm"
           className="text-muted-foreground hover:text-foreground"
-          aria-label={
-            isAssistant ? "Regenerate assistant reply" : "Resend this message"
-          }
+          aria-label={isAssistant ? "Regenerate assistant reply" : "Resend this message"}
           disabled={!canRetry}
           onClick={() => void onRetry()}
         >
@@ -186,15 +160,7 @@ export default function LiveChat({
     [],
   );
 
-  const {
-    messages,
-    sendMessage,
-    setMessages,
-    regenerate,
-    status,
-    error,
-    stop,
-  } = useChat({
+  const { messages, sendMessage, setMessages, regenerate, status, error, stop } = useChat({
     id: CHAT_ID,
     transport,
     messages: INITIAL_MESSAGES,
@@ -290,23 +256,18 @@ export default function LiveChat({
         >
           <SheetHeader className="border-b">
             <SheetTitle className="flex items-center gap-2">
-              <span
-                className="inline-block size-2 rounded-full bg-emerald-500"
-                aria-hidden
-              />
+              <span className="inline-block size-2 rounded-full bg-emerald-500" aria-hidden />
               Profile assistant
             </SheetTitle>
             <SheetDescription>
-              Powered by OpenRouter. Ask about Michael Hurley&apos;s background,
-              career, and skills. History is saved on this device.
+              Powered by OpenRouter. Ask about Michael Hurley&apos;s background, career, and skills.
+              History is saved on this device.
             </SheetDescription>
             {!apiConfigured ? (
               <p className="text-xs text-destructive" role="status">
-                Chat is offline: set{" "}
-                <span className="font-mono">OPENROUTER_API_KEY</span> (and
-                optionally <span className="font-mono">OPENROUTER_MODEL</span>)
-                in <span className="font-mono">.env.local</span>, then restart
-                dev.
+                Chat is offline: set <span className="font-mono">OPENROUTER_API_KEY</span> (and
+                optionally <span className="font-mono">OPENROUTER_MODEL</span>) in{" "}
+                <span className="font-mono">.env.local</span>, then restart dev.
               </p>
             ) : null}
           </SheetHeader>
@@ -354,9 +315,7 @@ export default function LiveChat({
                   type="text"
                   name="profile-chat-message"
                   placeholder={
-                    apiConfigured
-                      ? "Ask me anything…"
-                      : "Configure OpenRouter to enable chat"
+                    apiConfigured ? "Ask me anything…" : "Configure OpenRouter to enable chat"
                   }
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}

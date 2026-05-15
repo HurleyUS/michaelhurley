@@ -24,18 +24,9 @@ export type TimelineRoleEntry = {
   logoClassName?: string;
 };
 
-export type TimelineEntry =
-  | TimelinePhotoEntry
-  | TimelineDoublePhotoEntry
-  | TimelineRoleEntry;
+export type TimelineEntry = TimelinePhotoEntry | TimelineDoublePhotoEntry | TimelineRoleEntry;
 
-export const heroFlashNames = [
-  "spring",
-  "night",
-  "fall",
-  "winter",
-  "wireframe",
-] as const;
+export const heroFlashNames = ["spring", "night", "fall", "winter", "wireframe"] as const;
 
 export const menuImages = [
   {
@@ -155,14 +146,10 @@ export const timelineEntries: TimelineEntry[] = [
   {
     kind: "role",
     company: "Papa John's Waynesville/Franklin, NC",
-    logoSrc:
-      "https://www.papajohns.com/static-assets/franchise/images/logo-small-new-brand.svg",
+    logoSrc: "https://www.papajohns.com/static-assets/franchise/images/logo-small-new-brand.svg",
     logoPlacement: "header",
     logoClassName: "filter saturate-0 brightness-[10000%]",
-    meta: [
-      "Franchisee Partner, 06/2014 - 02/2015",
-      "Salary: $7.50/h - $27k/yr",
-    ],
+    meta: ["Franchisee Partner, 06/2014 - 02/2015", "Salary: $7.50/h - $27k/yr"],
     bullets: [
       "Responsible for the management of the store's operations, including but not limited to: scheduling, customer service, inventory, sales, recruitment, human resources, cost analysis, budgeting and reporting to franchisee and corporate.",
       "Manage the store's finances, including but not limited to: revenue, expenses, and cash flow.",
@@ -216,11 +203,7 @@ export const timelineEntries: TimelineEntry[] = [
     logoSrc: "/profile/photos/ny-2009.jpg",
     logoPlacement: "header",
     logoClassName: "block aspect-video object-cover",
-    meta: [
-      "Director, 01/2007 - 07/2010",
-      "ANP: $50k - $387k",
-      "Acquired TB Creative",
-    ],
+    meta: ["Director, 01/2007 - 07/2010", "ANP: $50k - $387k", "Acquired TB Creative"],
     bullets: [
       "Responsible for all aspects of the studio's success, including but not limited to: brand design, marketing, finance, human resources, and technology.",
       "Manage the studio's finances, including but not limited to: revenue, expenses, and cash flow.",
@@ -241,10 +224,7 @@ export const timelineEntries: TimelineEntry[] = [
     company: "Signs 'R' Us",
     logoSrc: "/profile/signsrus.com.png",
     logoPlacement: "footer",
-    meta: [
-      "Production Manager, 07/2003 - 01/2007",
-      "Salary: $10.50/h - $42k/yr",
-    ],
+    meta: ["Production Manager, 07/2003 - 01/2007", "Salary: $10.50/h - $42k/yr"],
     bullets: [
       "Responsible for all sign design and production, including but not limited to: design team output, production, packaging, equipment maintenance, and supplies.",
       "Design team output: design review, customer feedback, and revisions.",
@@ -291,14 +271,7 @@ export const timelineEntries: TimelineEntry[] = [
 export const skillGroups = [
   {
     title: "Management",
-    items: [
-      "Leadership",
-      "Strategy",
-      "Operations",
-      "Sales",
-      "Marketing",
-      "Growth",
-    ],
+    items: ["Leadership", "Strategy", "Operations", "Sales", "Marketing", "Growth"],
   },
   {
     title: "Technology",
@@ -317,13 +290,7 @@ export const skillGroups = [
   },
   {
     title: "Sales",
-    items: [
-      "Direct to Customer + B2B",
-      "Strategy",
-      "Closing",
-      "Retention",
-      "Reputation",
-    ],
+    items: ["Direct to Customer + B2B", "Strategy", "Closing", "Retention", "Reputation"],
   },
 ] as const;
 
@@ -339,12 +306,7 @@ export const developmentGroups = [
   },
   {
     title: "Frameworks",
-    items: [
-      "React/Next.js",
-      "WordPress + Elementor",
-      "Laravel/Symfony",
-      "Drupal/Joomla/Elgg",
-    ],
+    items: ["React/Next.js", "WordPress + Elementor", "Laravel/Symfony", "Drupal/Joomla/Elgg"],
   },
   {
     title: "Tools",

@@ -20,12 +20,7 @@ import {
   GooBackgroundCanvas,
   HeroCanvas,
 } from "@/components/michaelhurley/effects";
-import {
-  MarkIcon,
-  SignatureMark,
-  WaveText,
-  Wordmark,
-} from "@/components/michaelhurley/shared";
+import { MarkIcon, SignatureMark, WaveText, Wordmark } from "@/components/michaelhurley/shared";
 
 const groupedGalleryCards = Array.from({ length: 4 }, (_, columnIndex) =>
   galleryCards.filter((_, index) => index % 4 === columnIndex),
@@ -103,11 +98,7 @@ function HomeNav() {
           <div className="flex flex-wrap w-1/3">
             {menuImages.map((image) => (
               <div key={image.src} className="w-1/2 p-xl">
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className={image.className}
-                />
+                <img src={image.src} alt={image.alt} className={image.className} />
               </div>
             ))}
           </div>
@@ -200,10 +191,7 @@ function HeroSection() {
           <hr />
           <p className="relative grow place-content-center place-items-center text-center">
             <img src="/profile/reef.png" className="absolute reef" alt="" />
-            <img
-              src="https://michaelchurley.com/icon.gif"
-              alt="Michael Hurley icon"
-            />
+            <img src="https://michaelchurley.com/icon.gif" alt="Michael Hurley icon" />
             <small>since 1999</small>
           </p>
         </div>
@@ -243,8 +231,8 @@ function AnnouncementSection() {
           <div className="infinite-marquee marquee-direction-left" aria-hidden>
             {Array.from({ length: 6 }, (_, index) => (
               <span key={index}>
-                BESTWNC LAUNCHED • UNCAP.US LAUNCHED • GETAT.ME LAUNCHED •
-                HURLEYUS LAUNCHED • REAFERRAL.com LAUNCHED •
+                BESTWNC LAUNCHED • UNCAP.US LAUNCHED • GETAT.ME LAUNCHED • HURLEYUS LAUNCHED •
+                REAFERRAL.com LAUNCHED •
               </span>
             ))}
           </div>
@@ -274,17 +262,13 @@ function SummarySection({ yearsExperience }: { yearsExperience: number }) {
     >
       <p className="place-content-center place-items-center text-center relative">
         <img src="/profile/reef.png" className="absolute reef" alt="" />
-        <img
-          src="https://michaelchurley.com/icon.gif"
-          alt="Michael Hurley icon"
-        />
+        <img src="https://michaelchurley.com/icon.gif" alt="Michael Hurley icon" />
         <small>since 1999</small>
       </p>
       <p className="text-7xl text-pretty max-w-4xl mx-auto p-md font-black">
         business operations and technology professional with over{" "}
-        <span className="since99">{yearsExperience}</span> years experience in
-        management, sales, marketing + growth, graphic design, and software
-        development.
+        <span className="since99">{yearsExperience}</span> years experience in management, sales,
+        marketing + growth, graphic design, and software development.
       </p>
       <div className="hero-icon h-2x animate-fadeInUp text-center m-xl">
         <MarkIcon className="mx-auto block h-full w-auto" />
@@ -393,11 +377,7 @@ function TimelineCard({ entry }: { entry: TimelineEntry }) {
     return (
       <div className="flex flex-col items-stretch justify-start p-xl relative scroll-marquee-item">
         <p>{photoEntry.title}</p>
-        <img
-          src={photoEntry.src}
-          alt={photoEntry.title}
-          className={photoEntry.imageClassName}
-        />
+        <img src={photoEntry.src} alt={photoEntry.title} className={photoEntry.imageClassName} />
       </div>
     );
   }
@@ -409,11 +389,7 @@ function TimelineCard({ entry }: { entry: TimelineEntry }) {
         {doublePhotoEntry.photos.map((photo) => (
           <div key={photo.src} className="p-xl relative">
             <p>{photo.title}</p>
-            <img
-              src={photo.src}
-              alt={photo.title}
-              className={photo.imageClassName}
-            />
+            <img src={photo.src} alt={photo.title} className={photo.imageClassName} />
           </div>
         ))}
       </div>
@@ -533,15 +509,11 @@ function SkillsSection({ averageWorkHours }: { averageWorkHours: string }) {
       </div>
 
       <div className="flex jesitify-end items-stretch relative p-xl">
-        <div
-          id="on-the-clock"
-          className="w-1/2 flex flex-col gap-xl p-xl avoid-navbar ml-auto"
-        >
+        <div id="on-the-clock" className="w-1/2 flex flex-col gap-xl p-xl avoid-navbar ml-auto">
           <h2>Proven Skills</h2>
           <p>
-            <span className="average-work-hours">{averageWorkHours}</span> hours
-            of active, professional career experience in management, technology,
-            marketing and sales.
+            <span className="average-work-hours">{averageWorkHours}</span> hours of active,
+            professional career experience in management, technology, marketing and sales.
           </p>
 
           <div className="flex flex-col items-stretch justify-start gap-xl grow w-full">
@@ -562,9 +534,8 @@ function SkillsSection({ averageWorkHours }: { averageWorkHours: string }) {
             <div className="flex flex-col items-stretch justify-start grow w-full gap-xl">
               <h2>Full-Stack Development + Sr. Level Software Engineering</h2>
               <p>
-                Proficient in C, C derivative languages, Scripting languages,
-                Web technologies, App development and tools associated with
-                these:
+                Proficient in C, C derivative languages, Scripting languages, Web technologies, App
+                development and tools associated with these:
               </p>
 
               {developmentGroups.map((group) => (
@@ -599,10 +570,7 @@ function GalleryProjectCard({
   title: string;
 }) {
   return (
-    <div
-      className="gallery-item w-full"
-      style={{ "--hover-color": accent } as CSSProperties}
-    >
+    <div className="gallery-item w-full" style={{ "--hover-color": accent } as CSSProperties}>
       <div className="gallery-item-outer relative">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -649,19 +617,12 @@ function GalleryProjectCard({
                   aria-label={`${title} source code`}
                 />
               </div>
-              <img
-                src={screenshotSrc}
-                className="block object-cover"
-                alt={title}
-              />
+              <img src={screenshotSrc} className="block object-cover" alt={title} />
             </div>
           </div>
 
           <div className="gallery-item-logo relative">
-            <img
-              src="/profile/bar-b-que-wagon.svg"
-              alt="Bar-B-Que Wagon logo"
-            />
+            <img src="/profile/bar-b-que-wagon.svg" alt="Bar-B-Que Wagon logo" />
           </div>
         </div>
       </div>
@@ -677,17 +638,14 @@ function GallerySection() {
           <h2 className="title font-black text-7xl uppercase">
             Frontend
             <br />
-            <small className="subttitle text-7xl text-primary">
-              Hall of Fame
-            </small>
+            <small className="subttitle text-7xl text-primary">Hall of Fame</small>
           </h2>
         </div>
         <div className="w-1/2 p-xl">
           <p>
-            From basic small local business websites to national brands and
-            global app designs. Michael Hurley&apos;s iconic engagement first
-            designs showcase his ability to tap into the psychology of audiences
-            to reach real goals.
+            From basic small local business websites to national brands and global app designs.
+            Michael Hurley&apos;s iconic engagement first designs showcase his ability to tap into
+            the psychology of audiences to reach real goals.
           </p>
         </div>
       </div>
@@ -697,10 +655,7 @@ function GallerySection() {
         className="grid grid-cols-4 gap-xl place-items-center place-content-center"
       >
         {groupedGalleryCards.map((column, columnIndex) => (
-          <div
-            key={columnIndex}
-            className="gallery-column flex flex-col gap-xl w-full"
-          >
+          <div key={columnIndex} className="gallery-column flex flex-col gap-xl w-full">
             {column.map((card) => (
               <GalleryProjectCard
                 key={card.id}
@@ -721,10 +676,7 @@ function GallerySection() {
 export default function MichaelHurleyPage() {
   const yearsExperience = new Date().getFullYear() - 1999;
   const totalWorkWeeks = getCalendarWeeksSince(new Date("1999-06-01"));
-  const averageWorkHours = (
-    (40 * totalWorkWeeks + 80 * totalWorkWeeks) /
-    2
-  ).toLocaleString();
+  const averageWorkHours = ((40 * totalWorkWeeks + 80 * totalWorkWeeks) / 2).toLocaleString();
 
   return (
     <div id="top">
@@ -745,11 +697,7 @@ export default function MichaelHurleyPage() {
       <svg width="0" height="0" aria-hidden className="absolute">
         <defs>
           <filter id="gooey">
-            <feGaussianBlur
-              in="SourceGraphic"
-              stdDeviation="20"
-              result="blur"
-            />
+            <feGaussianBlur in="SourceGraphic" stdDeviation="20" result="blur" />
             <feColorMatrix
               in="blur"
               mode="matrix"

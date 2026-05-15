@@ -1,7 +1,6 @@
 import type { UIMessage } from "ai";
 
-export const MICHAEL_HURLEY_CHAT_STORAGE_KEY =
-  "michael-hurley-chat:profile-assistant";
+export const MICHAEL_HURLEY_CHAT_STORAGE_KEY = "michael-hurley-chat:profile-assistant";
 
 function isRecord(v: unknown): v is Record<string, unknown> {
   return typeof v === "object" && v !== null;
@@ -63,9 +62,7 @@ export function parseStoredMessages(raw: string | null): UIMessage[] | null {
 export function loadMichaelHurleyChatFromStorage(): UIMessage[] | null {
   if (typeof window === "undefined") return null;
   try {
-    return parseStoredMessages(
-      localStorage.getItem(MICHAEL_HURLEY_CHAT_STORAGE_KEY),
-    );
+    return parseStoredMessages(localStorage.getItem(MICHAEL_HURLEY_CHAT_STORAGE_KEY));
   } catch {
     return null;
   }
@@ -75,10 +72,7 @@ export function saveMichaelHurleyChatToStorage(messages: UIMessage[]): void {
   if (typeof window === "undefined") return;
   try {
     const payload = stripStreamingForStorage(messages);
-    localStorage.setItem(
-      MICHAEL_HURLEY_CHAT_STORAGE_KEY,
-      JSON.stringify(payload),
-    );
+    localStorage.setItem(MICHAEL_HURLEY_CHAT_STORAGE_KEY, JSON.stringify(payload));
   } catch {
     // QuotaExceededError or private mode — ignore
   }

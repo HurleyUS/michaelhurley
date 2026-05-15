@@ -20,11 +20,7 @@ import Image from "next/image";
 import Link from "@/components/link";
 import { Button } from "@/components/ui/button";
 
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 
 export type SectionsType = Array<[string, string, React.ReactNode?]>;
 
@@ -46,10 +42,7 @@ function SectionFilter({ sections }: { sections: SectionsType }) {
       <SidebarGroupLabel>On this page</SidebarGroupLabel>
       <SidebarGroupContent>
         <div className="flex items-center gap-2 p-2">
-          <SidebarInput
-            placeholder="Filter sections"
-            onChange={handleSectionFilter}
-          />
+          <SidebarInput placeholder="Filter sections" onChange={handleSectionFilter} />
         </div>
         <nav>
           <SidebarMenu>

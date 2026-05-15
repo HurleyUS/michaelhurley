@@ -1,9 +1,6 @@
 "use client";
 
-import {
-  NavigationMenu,
-  NavigationMenuList,
-} from "@/components/ui/navigation-menu";
+import { NavigationMenu, NavigationMenuList } from "@/components/ui/navigation-menu";
 import MenuItem from "@/components/ui/layout/menu-item";
 import {
   Sheet,

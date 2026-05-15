@@ -39,16 +39,10 @@ export default function OffTheClockPage() {
                 <h3 className="text-3xl font-black uppercase">{card.title}</h3>
                 <p className="text-lg opacity-80">{card.subtitle}</p>
                 <div className="flex gap-md mt-md">
-                  <a
-                    href={card.liveUrl}
-                    className="text-sm font-bold border-b-2 border-white"
-                  >
+                  <a href={card.liveUrl} className="text-sm font-bold border-b-2 border-white">
                     LIVE
                   </a>
-                  <a
-                    href={card.repoUrl}
-                    className="text-sm font-bold border-b-2 border-white"
-                  >
+                  <a href={card.repoUrl} className="text-sm font-bold border-b-2 border-white">
                     CODE
                   </a>
                 </div>

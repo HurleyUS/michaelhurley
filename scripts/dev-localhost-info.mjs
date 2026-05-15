@@ -17,6 +17,4 @@ for (const ch of slug) {
 const port = 3300 + (hash % 5000);
 const host = `${slug}.localhost`;
 
-console.log(
-  JSON.stringify({ slug, host, port, url: `https://${host}` }, null, 2),
-);
+console.log(JSON.stringify({ slug, host, port, url: `https://${host}` }, null, 2));

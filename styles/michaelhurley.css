@@ -995,15 +995,9 @@ img.reef {
       inset: 0;
       z-index: 4;
 
-      --mask-cricle-size: calc(
-        1.5 * ((var(--container-7xl) / 4) - (var(--text-xl) * 4))
-      );
+      --mask-cricle-size: calc(1.5 * ((var(--container-7xl) / 4) - (var(--text-xl) * 4)));
 
-      mask-image: radial-gradient(
-        circle var(--mask-cricle-size) at center,
-        #ffff 100%,
-        #fff0 100%
-      );
+      mask-image: radial-gradient(circle var(--mask-cricle-size) at center, #ffff 100%, #fff0 100%);
       mask-repeat: no-repeat;
       mask-size: 600% 600%;
       mask-position: center calc(var(--mask-cricle-size) * -5);

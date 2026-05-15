@@ -2,11 +2,7 @@
  * App Layout public module surface.
  */
 import type { Metadata } from "next";
-import {
-  Source_Sans_3,
-  Source_Serif_4,
-  Source_Code_Pro,
-} from "next/font/google";
+import { Source_Sans_3, Source_Serif_4, Source_Code_Pro } from "next/font/google";
 import "./globals.css";
 import "../styles/max.css";
 import "../styles/michaelhurley.css";

@@ -121,18 +121,7 @@ const paletteColors = [
   "lavender",
 ];
 
-const paletteColorShades = [
-  "100",
-  "200",
-  "300",
-  "400",
-  "500",
-  "600",
-  "700",
-  "800",
-  "900",
-  "950",
-];
+const paletteColorShades = ["100", "200", "300", "400", "500", "600", "700", "800", "900", "950"];
 
 const paletteGrays = [
   "text",
@@ -151,15 +140,7 @@ const paletteGrays = [
 
 const colorables = ["text", "bg", "border", "shadow"];
 
-const aspects = [
-  "video",
-  "square",
-  "golden",
-  "retro",
-  "portrait",
-  "panorama",
-  "imax",
-];
+const aspects = ["video", "square", "golden", "retro", "portrait", "panorama", "imax"];
 
 // ── Generators ──────────────────────────────────────────────────────────────
 
@@ -276,11 +257,7 @@ function generatePaletteColors() {
     );
   }
 
-  return wrapComponent(
-    "PaletteColorsExample",
-    "palette-colors",
-    rows.join("\n"),
-  );
+  return wrapComponent("PaletteColorsExample", "palette-colors", rows.join("\n"));
 }
 
 function generateGrays() {
@@ -336,11 +313,7 @@ function generatePaletteShades() {
     );
   }
 
-  return wrapComponent(
-    "PaletteShadesExample",
-    "palette-shades",
-    rows.join("\n"),
-  );
+  return wrapComponent("PaletteShadesExample", "palette-shades", rows.join("\n"));
 }
 
 function generateAspects() {
@@ -398,9 +371,7 @@ for (const section of sections) {
 }
 
 // Write the page
-const imports = sections
-  .map((s) => `import ${s.name} from "./examples/${s.slug}";`)
-  .join("\n");
+const imports = sections.map((s) => `import ${s.name} from "./examples/${s.slug}";`).join("\n");
 
 const sectionEntries = sections
   .map((s) => `  ["${s.title}", "${s.slug}", <${s.name} key="${s.slug}" />],`)

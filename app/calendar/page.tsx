@@ -25,24 +25,17 @@ export default function CalendarPage() {
 
           <div className="space-y-xl">
             <div className="border-l-8 border-primary p-xl">
-              <h2 className="text-3xl font-black uppercase mb-sm">
-                Current Status
-              </h2>
-              <p className="text-xl font-bold text-primary">
-                Accepting Select Projects
-              </p>
+              <h2 className="text-3xl font-black uppercase mb-sm">Current Status</h2>
+              <p className="text-xl font-bold text-primary">Accepting Select Projects</p>
               <p className="mt-md opacity-70">
-                Focusing on high-performance web applications and strategic
-                growth operations.
+                Focusing on high-performance web applications and strategic growth operations.
               </p>
             </div>
 
             <div className="border-l-8 border-foreground p-xl">
               <h2 className="text-3xl font-black uppercase mb-sm">Timezone</h2>
               <p className="text-xl font-bold">Eastern Standard Time (EST)</p>
-              <p className="mt-md opacity-70">
-                Based in the North Carolina Highlands.
-              </p>
+              <p className="mt-md opacity-70">Based in the North Carolina Highlands.</p>
             </div>
           </div>
         </div>
