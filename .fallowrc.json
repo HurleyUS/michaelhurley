@@ -2,64 +2,26 @@
   "$schema": "https://raw.githubusercontent.com/fallow-rs/fallow/main/schema.json",
   "entry": [
     "app/**/{page,layout,route,global-error,error,not-found,template,default}.{ts,tsx,js,jsx}",
-    "app/{manifest,robots,sitemap,apple-icon,icon}.{ts,tsx,js,jsx}",
+    "app/{manifest,robots,sitemap,apple-icon,icon-192.png/route,icon-512.png/route}.{ts,tsx,js,jsx}",
     "instrumentation.{ts,tsx,js,jsx}",
     "instrumentation-client.{ts,tsx,js,jsx}",
-    "providers/**/*.{ts,tsx,js,jsx}",
+    "proxy.{ts,tsx,js,jsx}",
+    "__tests__/**/*.{ts,tsx,js,jsx}",
     "scripts/**/*.{ts,tsx,js,jsx,mjs}"
   ],
   "ignorePatterns": [
     ".next/**",
     "node_modules/**",
-    "coverage/**",
+    "convex/_generated/**",
     "public/**",
-    "components/**",
-    "./components/**",
-    "lib/**",
-    "./lib/**",
-    "project.ts",
-    "hooks/use-mobile.ts"
+    "app/max.css"
   ],
-  "ignoreDependencies": [
-    "@hookform/resolvers",
-    "@tailwindcss/aspect-ratio",
-    "@tailwindcss/container-queries",
-    "date-fns",
-    "motion",
-    "phosphor-icons",
-    "react-hook-form",
-    "view-transitions-toolkit",
-    "@ai-sdk/react",
-    "@base-ui/react",
-    "@phosphor-icons/react",
-    "@radix-ui/react-visually-hidden",
-    "class-variance-authority",
-    "clsx",
-    "cmdk",
-    "embla-carousel-react",
-    "framer-motion",
-    "input-otp",
-    "next-themes",
-    "radix-ui",
-    "react-day-picker",
-    "react-resizable-panels",
-    "recharts",
-    "sonner",
-    "tailwind-merge",
-    "vaul"
-  ],
-  "health": {
-    "maxCyclomatic": 25,
-    "maxCognitive": 20,
-    "maxCrap": 100
-  },
-  "duplicates": {
-    "threshold": 3,
-    "ignoreImports": true
-  },
   "rules": {
-    "unused-dependencies": "warn",
-    "unused-files": "warn",
-    "unused-exports": "warn"
+    "unused-dependencies": "warn"
+  },
+  "audit": {
+    "deadCodeBaseline": ".fallow/baselines/dead-code.json",
+    "healthBaseline": ".fallow/baselines/health.json",
+    "dupesBaseline": ".fallow/baselines/dupes.json"
   }
 }
